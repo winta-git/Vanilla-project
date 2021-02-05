@@ -1,0 +1,51 @@
+.weather-app {
+  max-width: 200 px;
+  margin: 10px auto;
+  padding-top: 30px;
+  padding: 30px 20px 5px 20px;
+  border: 1px solid;
+  border-radius: 5px;
+}
+
+h1 {
+  text-align: left;
+  display: block;
+  margin: 0 auto;
+  padding: 5px 10px 5px 10px auto;
+  display: inline-block;
+  height: 36px;
+  width: 81px;
+}
+
+.search {
+  text-align: left;
+  display: block;
+  padding-top: 20px;
+  margin: 0 auto;
+}
+button {
+        border-radius: 25px;
+        border: 1px solid #8064e9;
+        background: #8064e9;
+        color: #fff;
+        font-size: 16px;
+        display: block;
+        margin: 0 auto;
+        line-height: 22px;
+        padding: 5px 10px;
+        text-decoration: none;
+        transition: all 200ms ease;
+        box-shadow: rgba(37, 39, 89, 0.08) 0px 8px 8px 0;
+      }
+
+      button:hover {
+        cursor: pointer;
+        background: #5e41a7;
+      }
+
+      .limited-spots {
+        font-weight: bold;
+      }
+      ul{
+    list-style: none;
+    
