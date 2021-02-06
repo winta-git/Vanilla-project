@@ -9,6 +9,6 @@ function showTemperature(response) {
 let apikey = "db19e864f86e1792fa09a7dafc23c7cf";
 let apiurl = "api.openweathermap.org/data/2.5/forecast?q={city name}&appid={API key}";
 
-let h1 = document.querySelector(⋕ city);
+let h1 = document.querySelector(⋕city);
 
-Axios.get(apiurl).then(show temperature);
+Axios.get(apiurl).then(showTemperature);
