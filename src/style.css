@@ -33,17 +33,20 @@ li {
   border: 1px solid rgb(0, 0, 0);
   border-radius: 5px;
 }
+.overview {
+  margin-bottom: 25px;
+}
 .weather-temperature img {
   margin-right: 5px;
-  height: 45px;
-  width: 45px;
+  height: 65px;
+  width: 65px;
 }
 
 .weather-temperature strong {
   color: #5e41a7;
   font-size: 34px;
   line-height: 1px;
-  font-weight: 200;
+  font-weight: 300;
 }
 .weather-temperature .units {
   position: relative;
