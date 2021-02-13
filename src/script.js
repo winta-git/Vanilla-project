@@ -43,8 +43,10 @@ let apikey = "eac809de9b5da86f7dca73c1830c1d4c";
 }
 
 function displayWeatherForcast(response) {
-    let WeatherForcast = document.querySelector("⋕weatherForcast");
-    let WeatherForcast = response.data.list[0];
+	let WeatherForcast = document.querySelector("⋕weatherForcast");
+	weatherForecastElement.innerHTML = null;
+	let WeatherForcast = null;
+
 
 }
 function formatHours(timestamp) {
@@ -64,7 +66,9 @@ return `${day} ${hours}:${minutes}`;
 
 }
 
-WeatherForcast.innerHTML = `
+for (let index = 0; index < 6; index++) {
+	WeatherForecast = response.data.list[index];
+	weatherForecastElement.innerHTML += `
 <div class="col-2">
 														<div class="clear-fix">
                  <h5>
@@ -79,6 +83,7 @@ WeatherForcast.innerHTML = `
                  </div>
 																	</div>
 																	</div>`
+}
 
 let apikey = "eac809de9b5da86f7dca73c1830c1d4c";
     let apiUrl = 'https://api.openweathermap.org/data/2.5/onecall?q=London&appid={API key}';
