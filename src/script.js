@@ -41,6 +41,50 @@ let apikey = "eac809de9b5da86f7dca73c1830c1d4c";
     axios.get(apiUrl).then(displayTemperature);
 
 }
+
+function displayWeatherForcast(response) {
+    let WeatherForcast = document.querySelector("⋕weatherForcast");
+    let WeatherForcast = response.data.list[0];
+
+}
+function formatHours(timestamp) {
+	let date = new Date(timestamp);
+    let hours = date.getHours();
+    if (hours < 10) {
+        hours = '0s{minutes}';
+    }
+    let minutes = date.getMinutes();
+    if (minutes < 10) {
+        minutes = '0s{minutes}';
+    }
+
+
+let day = days[date.getday(0)];
+return `${day} ${hours}:${minutes}`;
+
+}
+
+WeatherForcast.innerHTML = `
+<div class="col-2">
+														<div class="clear-fix">
+                 <h5>
+                     
+																					${formatHours(forecast.dt * 1000)}
+                 </h5>
+                 <img src="https://th.bing.com/th/id/R8beb7953b13e9908f12a17d4c3134744?rik=kRXJmdK3%2f51t8w&riu=http%3a%2f%2fimages.clipartpanda.com%2fsunny-weather-clipart-sun-icon-sunny-weather-Download-Royalty-free-Vector-File-EPS-13900.jpg&ehk=qJVL7XMrJaGx7vF8mCM87ga1cdv7zng9T77uwlOZ02o%3d&risl=&pid=ImgRaw" width="50"
+                 alt="clear sky"/>
+
+                 <div class="weather-forecast.temperature">
+                     <strong>${Math.round(forecast.main.temp_max)}℃</strong>${Math.round(forecast.main.temp_max)}℃
+                 </div>
+																	</div>
+																	</div>`
+
+let apikey = "eac809de9b5da86f7dca73c1830c1d4c";
+    let apiUrl = 'https://api.openweathermap.org/data/2.5/onecall?q=London&appid={API key}';
+    axios.get(apiUrl).then(displayWeatherForcast);
+
+
 function handleSubmit(event) {
     event.preventDefault();
     let cityInputElement = document.queryselector("⋕city-input");
@@ -59,7 +103,7 @@ function displayFahrenheitTemperature(event) {
 function displayFahrenheitTemperature(event) {
     event.preventDefault();
     let temperatureElement = document.querySelector("⋕temperature");
-    temperatureElement.innerHTML = celsiusTemperature;
+    temperatureElement.innerHTML = Math.round(celsiusTemperature);
 }
 let celsiusTemperature = null;
 
