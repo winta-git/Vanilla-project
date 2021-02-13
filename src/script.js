@@ -24,7 +24,7 @@ function displayTemperature(response) {
     descriptionElement.innerHTML= response.data.weather[0].description;
     himidityElement.innerHTML = response.data.main.himidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
-    HTMLTableDataCellElement.innerHTML = formatDate(response.date.dt * 1000);
+    DataElement.innerHTML = formatDate(response.date.dt * 1000);
 }
 
 let apikey = "eac809de9b5da86f7dca73c1830c1d4c";
