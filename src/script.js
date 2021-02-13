@@ -1,6 +1,5 @@
 function formatDate(timestamp) {
-  
-    let date = new Date(timestamp);
+  let date = new Date(timestamp);
     let hours = date.getHours();
     if (hours < 10) {
         hours = '0s{minutes}';
@@ -20,7 +19,7 @@ function displayTemperature(response) {
     let temperatureElement = document.querySelector("⋕temperature");
     let cityElement = document.querySelector("⋕city");
     let descriptionElement = document.querySelector("⋕description");
-    let humidityElement = document.querySelector("⋕himudity");
+    let humidityElement = document.querySelector("⋕himidity");
     let windElement = document.querySelector("⋕wind");
     let iconElement = document.querySelector("⋕icon");
 
@@ -32,20 +31,19 @@ function displayTemperature(response) {
     himidityElement.innerHTML = response.data.main.himidity;
     windElement.innerHTML = Math.round(response.data.wind.speed);
     dataElement.innerHTML = formatDate(response.date.dt * 1000);
-    iconElement.setAttribute("src", '');
+	   iconElement.setAttribute("src", `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`);
     iconElement.setAttribute("alt", response.data.weather[0].description);
 }
 function search(city) {
 let apikey = "eac809de9b5da86f7dca73c1830c1d4c";
-    let apiUrl = 'https://api.openweathermap.org/data/2.5/weather?q=London&appid=eac809de9b5da86f7dca73c1830c1d4c&units=metric';
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=eac809de9b5da86f7dca73c1830c1d4c&units=metric`;
     axios.get(apiUrl).then(displayTemperature);
 
 }
-
-function displayWeatherForcast(response) {
-	let WeatherForcast = document.querySelector("⋕weatherForcast");
+function displayWeatherForecast(response) {
+	let WeatherForecast = document.querySelector("⋕weatherForecast");
 	weatherForecastElement.innerHTML = null;
-	let WeatherForcast = null;
+	
 
 
 }
@@ -79,7 +77,7 @@ for (let index = 0; index < 6; index++) {
                  alt="clear sky"/>
 
                  <div class="weather-forecast.temperature">
-                     <strong>${Math.round(forecast.main.temp_max)}℃</strong>${Math.round(forecast.main.temp_max)}℃
+                     <strong>${Math.round(weatherForecast.main.temp_max)}℃</strong>${Math.round(weatherForecast.main.temp_max)}℃
                  </div>
 																	</div>
 																	</div>`
