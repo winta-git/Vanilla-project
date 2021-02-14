@@ -1,147 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-								<link rel="stylesheet" href="src/style.css" />
-								<title>Weather App</title>
+ <meta charset="UTF-8" />
+ <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous" />
+ <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+ <link rel="stylesheet" href="src/style.css" />
+ <title>Weather App</title>
 </head>
-<body>
-    <div class="container">
-      <div class weather-app-wrapper>
-					<div class weather-App>
-            <div class="overview">
-    <form id="search-form" class="mb-3">
-        <div class="row">
-									<div class="col-5">
-            <input type="Search city" placeholder="Search city"/>
-</div>
-												<div class="col-2">
-													<input type="submit" value="search" class="btn btn-primary"
-                          id="city-input"/>
-        </div>
-								</div>
-                </form>
-								
-        <p class="display">
-         <h1 id= "city"></h1>  
-         <ul>
-             <li id="formatdate"> </li>
-             <li id="description"></li>
-           </ul>
-         </p>
-          </div>
-         <div class="row">
-             <div class="col-6">
-               <div class="clearfix weather-temperature">
-                 <img src="" alt="Sunny" width="50"
-                 id="icon"
-                 class="float-left"
-                 />
-                 <class="float-left">
-                 <strong id= "temerature">25</strong>
-                 <span class ="units"><a href ="⋕" id = "celsius-link">℃ </a>|<a href ="⋕" id="ahrenheit-link">℉</a></span>
-                </class>
-                </div>
-                   </div>
-             
-             <div class="col-1">
-                 <ul>
-                     <li>
-                         Precipitation:0%
-                     </li>
-                     <li>
-                         Humidity:0%
-                     </li>
-                     <li>
-                         Wind:1km/hr
-                     </li>
-                 </ul>
-             </div>
-						</div>
-          </div>
-        </div>
-								<div class="weather-forecast">
-         <div class="row">
-             <div class="col-2">
-														<div class="clear-fix">
-                 <h5>
-                     sun
-                 </h5>
-                 <img src="https://th.bing.com/th/id/R8beb7953b13e9908f12a17d4c3134744?rik=kRXJmdK3%2f51t8w&riu=http%3a%2f%2fimages.clipartpanda.com%2fsunny-weather-clipart-sun-icon-sunny-weather-Download-Royalty-free-Vector-File-EPS-13900.jpg&ehk=qJVL7XMrJaGx7vF8mCM87ga1cdv7zng9T77uwlOZ02o%3d&risl=&pid=ImgRaw" width="50"
-                 alt="clear sky"/>
 
-                 <div class="weather-forecast.temperature">
-                     <strong>25℃</strong>22℃
-                 </div>
-																	</div>
-																	</div>
-                    <div class="col-2">
-                    
-                        <h5>
-                            sun
-                        </h5>
-                        <img src="https://th.bing.com/th/id/R8beb7953b13e9908f12a17d4c3134744?rik=kRXJmdK3%2f51t8w&riu=http%3a%2f%2fimages.clipartpanda.com%2fsunny-weather-clipart-sun-icon-sunny-weather-Download-Royalty-free-Vector-File-EPS-13900.jpg&ehk=qJVL7XMrJaGx7vF8mCM87ga1cdv7zng9T77uwlOZ02o%3d&risl=&pid=ImgRaw"
-                            width="50" alt="clear sky" />
-                        <div class="weather-forecast.temperature">
-                            <strong>25℃</strong>22℃
-                        </div>
-																				</div>
-                        <div class="col-2">
-                            <h5>
-                                sun
-                            </h5>
-                            <img src="https://th.bing.com/th/id/R8beb7953b13e9908f12a17d4c3134744?rik=kRXJmdK3%2f51t8w&riu=http%3a%2f%2fimages.clipartpanda.com%2fsunny-weather-clipart-sun-icon-sunny-weather-Download-Royalty-free-Vector-File-EPS-13900.jpg&ehk=qJVL7XMrJaGx7vF8mCM87ga1cdv7zng9T77uwlOZ02o%3d&risl=&pid=ImgRaw"                        width="50" alt="clear sky" />
-                            <div class="weather-forecast.temperature">
-                                <strong>25℃</strong>22℃
-                            </div>
-																								</div>
-                            <div class="col-2">
-                                <h5>
-                                    sun
-                                </h5>
-                                <img src="https://th.bing.com/th/id/R8beb7953b13e9908f12a17d4c3134744?rik=kRXJmdK3%2f51t8w&riu=http%3a%2f%2fimages.clipartpanda.com%2fsunny-weather-clipart-sun-icon-sunny-weather-Download-Royalty-free-Vector-File-EPS-13900.jpg&ehk=qJVL7XMrJaGx7vF8mCM87ga1cdv7zng9T77uwlOZ02o%3d&risl=&pid=ImgRaw"
-                                    width="50" alt="clear sky" />
-                                <div class="weather-forecast.temperature">
-                                    <strong>25℃</strong>22℃
-                                </div>
-																												</div>
-                                <div class="col-2">
-                                    <h5>
-                                        sun
-                                    </h5>
-                                    <img src="https://th.bing.com/th/id/R8beb7953b13e9908f12a17d4c3134744?rik=kRXJmdK3%2f51t8w&riu=http%3a%2f%2fimages.clipartpanda.com%2fsunny-weather-clipart-sun-icon-sunny-weather-Download-Royalty-free-Vector-File-EPS-13900.jpg&ehk=qJVL7XMrJaGx7vF8mCM87ga1cdv7zng9T77uwlOZ02o%3d&risl=&pid=ImgRaw"
-                                        width="50" alt="clear sky" />
-                                    <div class="weather-forecast.temperature">
-                                        <strong>25℃</strong>22℃
-                                    </div>
-																																				</div>
-																																				<div class="col-2">
-																																					<h5>
-																																						sun
-																																					</h5>
-																																					<img src="https://th.bing.com/th/id/R8beb7953b13e9908f12a17d4c3134744?rik=kRXJmdK3%2f51t8w&riu=http%3a%2f%2fimages.clipartpanda.com%2fsunny-weather-clipart-sun-icon-sunny-weather-Download-Royalty-free-Vector-File-EPS-13900.jpg&ehk=qJVL7XMrJaGx7vF8mCM87ga1cdv7zng9T77uwlOZ02o%3d&risl=&pid=ImgRaw"
-																																						width="50" alt="clear sky" />
-																																					<div class="weather-forecast.temperature">
-																																						<strong>25℃</strong>22℃
-																																					</div>
-																																				</div>
-																																				
-                 </div>
-             </div>
-         </div>
-        <small>
-          <a href="https://github.com/winta-git/Vanilla-project" target="_blank"> Open Source
-          </a>
-          ,by Winta Hailesselasie
-        </small>
-        </div>
+<body>
+ <div class="container">
+  <div class="weather-app-wrapper">
+   <div class="weather-App">
+    <div class="overview">
+     <form id="search-form" class="mb-3">
+      <div class="row">
+       <div class="col-5">
+        <input type="Search city" placeholder="Search city" id="city-input" />
+       </div>
+       <div class="col-2">
+        <input type="submit" value="search" class="btn btn-primary" />
+       </div>
+      </div>
+     </form>
+     <div class="display">
+      <h1 id="city"></h1>
+      <ul>
+       <li id="formatdate"></li>
+       <li id="description"></li>
+      </ul>
+     </div>
     </div>
+    <div class="row">
+     <div class="col-6">
+      <div class="clearfix weather-temperature">
+       <img src="" alt="Sunny" width="50" id="icon" class="float-left" />
+       <div class="float-left">
+        <strong id="temperature">25</strong>
+        <span class="units"><a href="#" id="celsius-link">℃ </a>|<a href="#" id="fahrenheit-link">℉</a></span>
+       </div>
+      </div>
+     </div>
+     <div class="col-1">
+      <ul>
+       <li>Precipitation:0%</li>
+       <li>Humidity:<span id="humidity">0</span>%</li>
+       <li>Wind:<span id="wind">1</span>km/hr</li>
+      </ul>
+     </div>
     </div>
-  
-				<script src="src/script.js"></script>
+   </div>
+  </div>
+  <div class="weather-forecast">
+   <div class="row" id="weatherForecast">
+    <div class="col-2">
+     <div class="clear-fix">
+      <h5>Tue</h5>
+      <img
+       src="https://th.bing.com/th/id/R8beb7953b13e9908f12a17d4c3134744?rik=kRXJmdK3%2f51t8w&riu=http%3a%2f%2fimages.clipartpanda.com%2fsunny-weather-clipart-sun-icon-sunny-weather-Download-Royalty-free-Vector-File-EPS-13900.jpg&ehk=qJVL7XMrJaGx7vF8mCM87ga1cdv7zng9T77uwlOZ02o%3d&risl=&pid=ImgRaw"
+       width="50" alt="clear sky" />
+      <div class="weather-forecast.temperature">
+       <strong>25℃</strong>22℃
+      </div>
+     </div>
+    </div>
+    <div class="col-2">
+     <h5>Wed</h5>
+     <img
+      src="https://th.bing.com/th/id/R8beb7953b13e9908f12a17d4c3134744?rik=kRXJmdK3%2f51t8w&riu=http%3a%2f%2fimages.clipartpanda.com%2fsunny-weather-clipart-sun-icon-sunny-weather-Download-Royalty-free-Vector-File-EPS-13900.jpg&ehk=qJVL7XMrJaGx7vF8mCM87ga1cdv7zng9T77uwlOZ02o%3d&risl=&pid=ImgRaw"
+      width="50" alt="clear sky" />
+     <div class="weather-forecast.temperature">
+      <strong>25℃</strong>22℃
+     </div>
+    </div>
+    <div class="col-2">
+     <h5>Thu</h5>
+     <img
+      src="https://th.bing.com/th/id/R8beb7953b13e9908f12a17d4c3134744?rik=kRXJmdK3%2f51t8w&riu=http%3a%2f%2fimages.clipartpanda.com%2fsunny-weather-clipart-sun-icon-sunny-weather-Download-Royalty-free-Vector-File-EPS-13900.jpg&ehk=qJVL7XMrJaGx7vF8mCM87ga1cdv7zng9T77uwlOZ02o%3d&risl=&pid=ImgRaw"
+      width="50" alt="clear sky" />
+     <div class="weather-forecast.temperature">
+      <strong>25℃</strong>22℃
+     </div>
+    </div>
+    <div class="col-2">
+     <h5>Fri</h5>
+     <img
+      src="https://th.bing.com/th/id/R8beb7953b13e9908f12a17d4c3134744?rik=kRXJmdK3%2f51t8w&riu=http%3a%2f%2fimages.clipartpanda.com%2fsunny-weather-clipart-sun-icon-sunny-weather-Download-Royalty-free-Vector-File-EPS-13900.jpg&ehk=qJVL7XMrJaGx7vF8mCM87ga1cdv7zng9T77uwlOZ02o%3d&risl=&pid=ImgRaw"
+      width="50" alt="clear sky" />
+     <div class="weather-forecast.temperature">
+      <strong>25℃</strong>22℃
+     </div>
+    </div>
+    <div class="col-2">
+     <h5>Sat</h5>
+     <img
+      src="https://th.bing.com/th/id/R8beb7953b13e9908f12a17d4c3134744?rik=kRXJmdK3%2f51t8w&riu=http%3a%2f%2fimages.clipartpanda.com%2fsunny-weather-clipart-sun-icon-sunny-weather-Download-Royalty-free-Vector-File-EPS-13900.jpg&ehk=qJVL7XMrJaGx7vF8mCM87ga1cdv7zng9T77uwlOZ02o%3d&risl=&pid=ImgRaw"
+      width="50" alt="clear sky" />
+     <div class="weather-forecast.temperature">
+      <strong>25℃</strong>22℃
+     </div>
+    </div>
+    <div class="col-2">
+     <h5>Sun</h5>
+     <img
+      src="https://th.bing.com/th/id/R8beb7953b13e9908f12a17d4c3134744?rik=kRXJmdK3%2f51t8w&riu=http%3a%2f%2fimages.clipartpanda.com%2fsunny-weather-clipart-sun-icon-sunny-weather-Download-Royalty-free-Vector-File-EPS-13900.jpg&ehk=qJVL7XMrJaGx7vF8mCM87ga1cdv7zng9T77uwlOZ02o%3d&risl=&pid=ImgRaw"
+      width="50" alt="clear sky" />
+     <div class="weather-forecast.temperature">
+      <strong>25℃</strong>22℃
+     </div>
+    </div>
+   </div>
+  </div>
+  <small>
+   <a href="https://github.com/winta-git/Vanilla-project" target="_blank">
+    Open Source
+   </a>
+   ,by Winta Hailesselasie
+  </small>
+ </div>
+ <script src="src/script.js"></script>
 </body>
+
 </html>
