@@ -76,7 +76,6 @@ button {
 }
 
 button:hover {
-  text-underline-position: none;
   cursor: pointer;
   background: #5e41a7;
 }
